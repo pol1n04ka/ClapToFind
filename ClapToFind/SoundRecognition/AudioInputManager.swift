@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import AVFAudio
+import AVFoundation
 
 
 public protocol AudioInputManagerDelegate: AnyObject {
@@ -14,10 +14,8 @@ public protocol AudioInputManagerDelegate: AnyObject {
     func audioInputManager(_ audioManager: AudioInputManager, didCaptureChannelData: [Int16])
 }
 
-
+/// Class for get sound stream from microphone
 public class AudioInputManager {
-    
-    // Code for get audio stream from microphone
     
     public let bufferSize: Int
     
@@ -35,24 +33,81 @@ public class AudioInputManager {
     public func checkPermissionAndStartTappingMicrophone() {
         switch AVAudioSession.sharedInstance().recordPermission {
         case .granted:
-            break
+            startTappingMicrophone()
         case .undetermined:
-            break
+            delegate?.audioInputManagerDidFailToAchievePermission(self)
         case .denied:
-            break
+            requestPermissions()
         @unknown default:
-            break
+            fatalError()
         }
     }
     
     public func requestPermissions() {
         AVAudioSession.sharedInstance().requestRecordPermission { granted in
-            
+            if granted {
+                self.startTappingMicrophone()
+            } else {
+                self.checkPermissionAndStartTappingMicrophone()
+            }
         }
     }
     
     public func startTappingMicrophone() {
+        let inputNode = audioEngine.inputNode
+        let inputFormat = inputNode.outputFormat(forBus: 0)
         
+        guard let recordingFormat = AVAudioFormat(
+            commonFormat: .pcmFormatInt16,
+            sampleRate: Double(sampleRate),
+            channels: 1,
+            interleaved: true
+        ), let formatConverter = AVAudioConverter(
+            from: inputFormat,
+            to: recordingFormat
+        ) else { return }
+        
+        inputNode.installTap(onBus: 0,
+                             bufferSize: AVAudioFrameCount(bufferSize),
+                             format: inputFormat) { buffer, _ in
+            self.conversionQueue.async {
+                guard let pcmBuffer = AVAudioPCMBuffer(
+                    pcmFormat: recordingFormat,
+                    frameCapacity: AVAudioFrameCount(recordingFormat.sampleRate * 2.0)
+                ) else { return }
+                
+                var error: NSError?
+                let inputBlock: AVAudioConverterInputBlock = { _, outStatus in
+                    outStatus.pointee = AVAudioConverterInputStatus.haveData
+                    return buffer
+                }
+                
+                formatConverter.convert(to: pcmBuffer, error: &error, withInputFrom: inputBlock)
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                
+                if let channelData = pcmBuffer.int16ChannelData {
+                    let channelDataValue = channelData.pointee
+                    let channelDataValueArray = stride(
+                        from: 0,
+                        through: Int(pcmBuffer.frameLength),
+                        by: buffer.stride
+                    ).map { channelDataValue[$0] }
+                    
+                    self.delegate?.audioInputManager(self, didCaptureChannelData: channelDataValueArray)
+                }
+            }
+        }
+        
+        audioEngine.prepare()
+        do {
+            try audioEngine.start()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
 }
