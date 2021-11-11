@@ -7,27 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1B4B78F796AD48B2774D12 /* Pods_ClapToFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDA863B5A2C695FEB1B8EE1 /* Pods_ClapToFind.framework */; };
 		36B5AC6D273D54D300BAF8FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */; };
-		36B5AC6F273D54D300BAF8FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC6E273D54D300BAF8FF /* SceneDelegate.swift */; };
 		36B5AC71273D54D300BAF8FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC70273D54D300BAF8FF /* ViewController.swift */; };
-		36B5AC74273D54D300BAF8FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC72273D54D300BAF8FF /* Main.storyboard */; };
 		36B5AC77273D54D300BAF8FF /* ClapToFind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC75273D54D300BAF8FF /* ClapToFind.xcdatamodeld */; };
 		36B5AC79273D54D700BAF8FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC78273D54D700BAF8FF /* Assets.xcassets */; };
 		36B5AC7C273D54D700BAF8FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC7A273D54D700BAF8FF /* LaunchScreen.storyboard */; };
 		36B5AC84273D554C00BAF8FF /* SoundRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */; };
+		36B5AC8F273DA79A00BAF8FF /* AudioInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC8E273DA79900BAF8FF /* AudioInputManager.swift */; };
+		36B5AC93273DAAF400BAF8FF /* labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC91273DAAF400BAF8FF /* labels.txt */; };
+		36B5AC94273DAAF400BAF8FF /* sound_classification.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC92273DAAF400BAF8FF /* sound_classification.tflite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		36B5AC69273D54D300BAF8FF /* ClapToFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClapToFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		36B5AC6E273D54D300BAF8FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		36B5AC70273D54D300BAF8FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		36B5AC73273D54D300BAF8FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36B5AC76273D54D300BAF8FF /* ClapToFind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClapToFind.xcdatamodel; sourceTree = "<group>"; };
 		36B5AC78273D54D700BAF8FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B5AC7B273D54D700BAF8FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36B5AC7D273D54D700BAF8FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRecognition.swift; sourceTree = "<group>"; };
+		36B5AC8E273DA79900BAF8FF /* AudioInputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInputManager.swift; sourceTree = "<group>"; };
+		36B5AC91273DAAF400BAF8FF /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labels.txt; sourceTree = "<group>"; };
+		36B5AC92273DAAF400BAF8FF /* sound_classification.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_classification.tflite; sourceTree = "<group>"; };
+		390FA04D64BDD755FC0EF5AF /* Pods-ClapToFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClapToFind.release.xcconfig"; path = "Target Support Files/Pods-ClapToFind/Pods-ClapToFind.release.xcconfig"; sourceTree = "<group>"; };
+		4BDA863B5A2C695FEB1B8EE1 /* Pods_ClapToFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClapToFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9540043AF82AD9A91F415615 /* Pods-ClapToFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClapToFind.debug.xcconfig"; path = "Target Support Files/Pods-ClapToFind/Pods-ClapToFind.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F1B4B78F796AD48B2774D12 /* Pods_ClapToFind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		095A59B3FE200ECC4C135A1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9540043AF82AD9A91F415615 /* Pods-ClapToFind.debug.xcconfig */,
+				390FA04D64BDD755FC0EF5AF /* Pods-ClapToFind.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		36B5AC60273D54D300BAF8FF = {
 			isa = PBXGroup;
 			children = (
 				36B5AC6B273D54D300BAF8FF /* ClapToFind */,
 				36B5AC6A273D54D300BAF8FF /* Products */,
+				095A59B3FE200ECC4C135A1B /* Pods */,
+				81245C95F212746715D48CA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,17 +78,98 @@
 		36B5AC6B273D54D300BAF8FF /* ClapToFind */ = {
 			isa = PBXGroup;
 			children = (
+				36B5AC87273D5C3E00BAF8FF /* SoundRecognition */,
+				36B5AC85273D5C2900BAF8FF /* Screens */,
 				36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */,
-				36B5AC6E273D54D300BAF8FF /* SceneDelegate.swift */,
-				36B5AC70273D54D300BAF8FF /* ViewController.swift */,
-				36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */,
-				36B5AC72273D54D300BAF8FF /* Main.storyboard */,
 				36B5AC78273D54D700BAF8FF /* Assets.xcassets */,
 				36B5AC7A273D54D700BAF8FF /* LaunchScreen.storyboard */,
 				36B5AC7D273D54D700BAF8FF /* Info.plist */,
 				36B5AC75273D54D300BAF8FF /* ClapToFind.xcdatamodeld */,
 			);
 			path = ClapToFind;
+			sourceTree = "<group>";
+		};
+		36B5AC85273D5C2900BAF8FF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				36B5AC8D273D5D8100BAF8FF /* MainScreen */,
+				36B5AC8C273D5D6300BAF8FF /* SetupApp */,
+				36B5AC8B273D5D4700BAF8FF /* Settings */,
+				36B5AC8A273D5D3300BAF8FF /* Subscribe */,
+				36B5AC89273D5CB700BAF8FF /* LaunchScreen */,
+				36B5AC88273D5CAF00BAF8FF /* Onboarding */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		36B5AC87273D5C3E00BAF8FF /* SoundRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				36B5AC90273DAA9C00BAF8FF /* Model */,
+				36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */,
+				36B5AC8E273DA79900BAF8FF /* AudioInputManager.swift */,
+			);
+			path = SoundRecognition;
+			sourceTree = "<group>";
+		};
+		36B5AC88273D5CAF00BAF8FF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		36B5AC89273D5CB700BAF8FF /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		36B5AC8A273D5D3300BAF8FF /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
+		36B5AC8B273D5D4700BAF8FF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		36B5AC8C273D5D6300BAF8FF /* SetupApp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SetupApp;
+			sourceTree = "<group>";
+		};
+		36B5AC8D273D5D8100BAF8FF /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				36B5AC70273D54D300BAF8FF /* ViewController.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		36B5AC90273DAA9C00BAF8FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36B5AC91273DAAF400BAF8FF /* labels.txt */,
+				36B5AC92273DAAF400BAF8FF /* sound_classification.tflite */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81245C95F212746715D48CA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BDA863B5A2C695FEB1B8EE1 /* Pods_ClapToFind.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +179,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B5AC80273D54D700BAF8FF /* Build configuration list for PBXNativeTarget "ClapToFind" */;
 			buildPhases = (
+				016D414CA97C16D3EA54D08E /* [CP] Check Pods Manifest.lock */,
 				36B5AC65273D54D300BAF8FF /* Sources */,
 				36B5AC66273D54D300BAF8FF /* Frameworks */,
 				36B5AC67273D54D300BAF8FF /* Resources */,
@@ -132,12 +232,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B5AC7C273D54D700BAF8FF /* LaunchScreen.storyboard in Resources */,
+				36B5AC94273DAAF400BAF8FF /* sound_classification.tflite in Resources */,
+				36B5AC93273DAAF400BAF8FF /* labels.txt in Resources */,
 				36B5AC79273D54D700BAF8FF /* Assets.xcassets in Resources */,
-				36B5AC74273D54D300BAF8FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		016D414CA97C16D3EA54D08E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ClapToFind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36B5AC65273D54D300BAF8FF /* Sources */ = {
@@ -147,7 +273,7 @@
 				36B5AC84273D554C00BAF8FF /* SoundRecognition.swift in Sources */,
 				36B5AC71273D54D300BAF8FF /* ViewController.swift in Sources */,
 				36B5AC6D273D54D300BAF8FF /* AppDelegate.swift in Sources */,
-				36B5AC6F273D54D300BAF8FF /* SceneDelegate.swift in Sources */,
+				36B5AC8F273DA79A00BAF8FF /* AudioInputManager.swift in Sources */,
 				36B5AC77273D54D300BAF8FF /* ClapToFind.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,14 +281,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		36B5AC72273D54D300BAF8FF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36B5AC73273D54D300BAF8FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		36B5AC7A273D54D700BAF8FF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,6 +410,7 @@
 		};
 		36B5AC81273D54D700BAF8FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9540043AF82AD9A91F415615 /* Pods-ClapToFind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -300,9 +419,9 @@
 				DEVELOPMENT_TEAM = F26CRWS66V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ClapToFind/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "It's need for sound analysis";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -321,6 +440,7 @@
 		};
 		36B5AC82273D54D700BAF8FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 390FA04D64BDD755FC0EF5AF /* Pods-ClapToFind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -329,9 +449,9 @@
 				DEVELOPMENT_TEAM = F26CRWS66V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ClapToFind/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "It's need for sound analysis";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;

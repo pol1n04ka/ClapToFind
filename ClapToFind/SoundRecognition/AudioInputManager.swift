@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+
+public protocol AudioInputManagerDelegate {
+    
+}
+
+
+class AudioInputManager {
+    
+    // Code for get audio stream from microphone
+    
+    
+    
+}
