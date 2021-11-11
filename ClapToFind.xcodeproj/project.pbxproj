@@ -14,6 +14,7 @@
 		36B5AC77273D54D300BAF8FF /* ClapToFind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC75273D54D300BAF8FF /* ClapToFind.xcdatamodeld */; };
 		36B5AC79273D54D700BAF8FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC78273D54D700BAF8FF /* Assets.xcassets */; };
 		36B5AC7C273D54D700BAF8FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC7A273D54D700BAF8FF /* LaunchScreen.storyboard */; };
+		36B5AC84273D554C00BAF8FF /* SoundRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		36B5AC78273D54D700BAF8FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B5AC7B273D54D700BAF8FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36B5AC7D273D54D700BAF8FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRecognition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */,
 				36B5AC6E273D54D300BAF8FF /* SceneDelegate.swift */,
 				36B5AC70273D54D300BAF8FF /* ViewController.swift */,
+				36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */,
 				36B5AC72273D54D300BAF8FF /* Main.storyboard */,
 				36B5AC78273D54D700BAF8FF /* Assets.xcassets */,
 				36B5AC7A273D54D700BAF8FF /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B5AC84273D554C00BAF8FF /* SoundRecognition.swift in Sources */,
 				36B5AC71273D54D300BAF8FF /* ViewController.swift in Sources */,
 				36B5AC6D273D54D300BAF8FF /* AppDelegate.swift in Sources */,
 				36B5AC6F273D54D300BAF8FF /* SceneDelegate.swift in Sources */,
@@ -221,7 +225,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -276,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -301,6 +305,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,6 +334,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
