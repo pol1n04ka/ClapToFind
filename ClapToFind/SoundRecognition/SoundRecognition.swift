@@ -7,11 +7,13 @@
 
 import Foundation
 import TensorFlowLite
-import CoreMIDI
 
 
 public protocol SoundRecognitionDelegate: AnyObject {
-    func soundRecognition(_ soundRecognition: SoundRecognition, didInterpreterProbabilities probabilities: [Float32])
+    func soundRecognition(
+        _ soundRecognition: SoundRecognition,
+        didInterpreterProbabilities probabilities: [Float32]
+    )
 }
 
 
@@ -34,11 +36,13 @@ public class SoundRecognition {
     private(set) var labelNames: [String] = []
     private var interpreter: Interpreter!
     
-    public init(modelFileName: String,
-                modelFileExtension: String = "tflite",
-                labelFileName: String = "labels",
-                labelFileExtension: String = "txt",
-                delegate: SoundRecognitionDelegate? = nil) {
+    public init(
+        modelFileName: String,
+        modelFileExtension: String = "tflite",
+        labelFileName: String = "labels",
+        labelFileExtension: String = "txt",
+        delegate: SoundRecognitionDelegate? = nil
+    ) {
         self.modelFileName = modelFileName
         self.modelFileExtension = modelFileExtension
         self.labelFileName = labelFileName
@@ -102,7 +106,7 @@ public class SoundRecognition {
             let labels = content.components(separatedBy: "\n")
                 .filter { !$0.isEmpty }
                 .compactMap { line -> String in
-                    let splitPair = line.components(separatedBy: "_")
+                    let splitPair = line.components(separatedBy: " ")
                     let label = splitPair[1]
                     let titleCasedLabel = label.components(separatedBy: "_")
                         .compactMap { $0.capitalized }
@@ -126,7 +130,17 @@ public class SoundRecognition {
     /// - Returns: `nil` if `unsafeData.count` is not a multiple of `MemoryLayout<Float>.stride`.
     private func dataToFloatArray(_ data: Data) -> [Float]? {
         guard data.count % MemoryLayout<Float>.stride == 0 else { return nil }
+        
+        #if swift(>=5.0)
         return data.withUnsafeBytes { .init($0.bindMemory(to: Float.self)) }
+        #else
+        return data.withUnsafeBytes {
+                    .init(UnsafeBufferPointer<Float>(
+                        start: $0,
+                        count: unsafeData.count / MemoryLayout<Element>.stride
+                    ))
+        }
+        #endif // swift(>=5.0)
     }
     
 }

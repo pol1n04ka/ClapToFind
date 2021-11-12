@@ -6,25 +6,28 @@
 //
 
 import Foundation
+import UIKit
 import AVFoundation
 
 
 public protocol AudioInputManagerDelegate: AnyObject {
     func audioInputManagerDidFailToAchievePermission(_ audioManager: AudioInputManager)
-    func audioInputManager(_ audioManager: AudioInputManager, didCaptureChannelData: [Int16])
+    func audioInputManager(_ audioManager: AudioInputManager, didCaptureChannelData channelData: [Int16])
 }
 
 /// Class for get sound stream from microphone
 public class AudioInputManager {
     
+    // MARK: Constants
     public let bufferSize: Int
-    
     private let sampleRate: Int
     private let conversionQueue = DispatchQueue(label: "conversionQueue")
     
+    // MARK: Variables
     public weak var delegate: AudioInputManagerDelegate?
     private let audioEngine = AVAudioEngine()
     
+    // MARK: Methods
     public init(sampleRate: Int) {
         self.sampleRate = sampleRate
         self.bufferSize = sampleRate * 2
@@ -35,11 +38,13 @@ public class AudioInputManager {
         case .granted:
             startTappingMicrophone()
         case .undetermined:
-            delegate?.audioInputManagerDidFailToAchievePermission(self)
+//            delegate?.audioInputManagerDidFailToAchievePermission(self)
+            requestPermissions()
         case .denied:
             requestPermissions()
         @unknown default:
-            fatalError()
+//            fatalError()
+            requestPermissions()
         }
     }
     
