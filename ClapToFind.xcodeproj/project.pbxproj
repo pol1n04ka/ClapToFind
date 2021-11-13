@@ -7,27 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36097E40273EE9E200FAC220 /* sound_classification.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 36097E3E273EE9E100FAC220 /* sound_classification.tflite */; };
+		36097E41273EE9E200FAC220 /* labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36097E3F273EE9E100FAC220 /* labels.txt */; };
+		363435E9273FC1DA0055D63A /* okey2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 363435E8273FC1DA0055D63A /* okey2.mp3 */; };
 		36B5AC6D273D54D300BAF8FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */; };
-		36B5AC6F273D54D300BAF8FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC6E273D54D300BAF8FF /* SceneDelegate.swift */; };
 		36B5AC71273D54D300BAF8FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC70273D54D300BAF8FF /* ViewController.swift */; };
-		36B5AC74273D54D300BAF8FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC72273D54D300BAF8FF /* Main.storyboard */; };
 		36B5AC77273D54D300BAF8FF /* ClapToFind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC75273D54D300BAF8FF /* ClapToFind.xcdatamodeld */; };
 		36B5AC79273D54D700BAF8FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC78273D54D700BAF8FF /* Assets.xcassets */; };
 		36B5AC7C273D54D700BAF8FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC7A273D54D700BAF8FF /* LaunchScreen.storyboard */; };
 		36B5AC84273D554C00BAF8FF /* SoundRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */; };
+		36B5AC8F273DA79A00BAF8FF /* AudioInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC8E273DA79900BAF8FF /* AudioInputManager.swift */; };
+		FEB43B0D8A5D05438040789C /* Pods_ClapToFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261C2761E959857CA1A50427 /* Pods_ClapToFind.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		261C2761E959857CA1A50427 /* Pods_ClapToFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClapToFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36097E3E273EE9E100FAC220 /* sound_classification.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_classification.tflite; sourceTree = "<group>"; };
+		36097E3F273EE9E100FAC220 /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labels.txt; sourceTree = "<group>"; };
+		363435E8273FC1DA0055D63A /* okey2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = okey2.mp3; sourceTree = "<group>"; };
 		36B5AC69273D54D300BAF8FF /* ClapToFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClapToFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		36B5AC6E273D54D300BAF8FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		36B5AC70273D54D300BAF8FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		36B5AC73273D54D300BAF8FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36B5AC76273D54D300BAF8FF /* ClapToFind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClapToFind.xcdatamodel; sourceTree = "<group>"; };
 		36B5AC78273D54D700BAF8FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B5AC7B273D54D700BAF8FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36B5AC7D273D54D700BAF8FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRecognition.swift; sourceTree = "<group>"; };
+		36B5AC8E273DA79900BAF8FF /* AudioInputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInputManager.swift; sourceTree = "<group>"; };
+		380AFC137A21D6C2FF24BC3D /* Pods-ClapToFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClapToFind.debug.xcconfig"; path = "Target Support Files/Pods-ClapToFind/Pods-ClapToFind.debug.xcconfig"; sourceTree = "<group>"; };
+		53F7C62C23EDF1E29B89103F /* Pods-ClapToFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClapToFind.release.xcconfig"; path = "Target Support Files/Pods-ClapToFind/Pods-ClapToFind.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEB43B0D8A5D05438040789C /* Pods_ClapToFind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		095A59B3FE200ECC4C135A1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				380AFC137A21D6C2FF24BC3D /* Pods-ClapToFind.debug.xcconfig */,
+				53F7C62C23EDF1E29B89103F /* Pods-ClapToFind.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		36097E3D273EE9E100FAC220 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36097E3E273EE9E100FAC220 /* sound_classification.tflite */,
+				36097E3F273EE9E100FAC220 /* labels.txt */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		36B5AC60273D54D300BAF8FF = {
 			isa = PBXGroup;
 			children = (
 				36B5AC6B273D54D300BAF8FF /* ClapToFind */,
 				36B5AC6A273D54D300BAF8FF /* Products */,
+				095A59B3FE200ECC4C135A1B /* Pods */,
+				9E32993EA152F09B74E51BE7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,17 +89,90 @@
 		36B5AC6B273D54D300BAF8FF /* ClapToFind */ = {
 			isa = PBXGroup;
 			children = (
+				36B5AC87273D5C3E00BAF8FF /* SoundRecognition */,
+				36B5AC85273D5C2900BAF8FF /* Screens */,
 				36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */,
-				36B5AC6E273D54D300BAF8FF /* SceneDelegate.swift */,
-				36B5AC70273D54D300BAF8FF /* ViewController.swift */,
-				36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */,
-				36B5AC72273D54D300BAF8FF /* Main.storyboard */,
 				36B5AC78273D54D700BAF8FF /* Assets.xcassets */,
 				36B5AC7A273D54D700BAF8FF /* LaunchScreen.storyboard */,
 				36B5AC7D273D54D700BAF8FF /* Info.plist */,
 				36B5AC75273D54D300BAF8FF /* ClapToFind.xcdatamodeld */,
 			);
 			path = ClapToFind;
+			sourceTree = "<group>";
+		};
+		36B5AC85273D5C2900BAF8FF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				36B5AC8D273D5D8100BAF8FF /* MainScreen */,
+				36B5AC8C273D5D6300BAF8FF /* SetupApp */,
+				36B5AC8B273D5D4700BAF8FF /* Settings */,
+				36B5AC8A273D5D3300BAF8FF /* Subscribe */,
+				36B5AC89273D5CB700BAF8FF /* LaunchScreen */,
+				36B5AC88273D5CAF00BAF8FF /* Onboarding */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		36B5AC87273D5C3E00BAF8FF /* SoundRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				36097E3D273EE9E100FAC220 /* Model */,
+				36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */,
+				36B5AC8E273DA79900BAF8FF /* AudioInputManager.swift */,
+			);
+			path = SoundRecognition;
+			sourceTree = "<group>";
+		};
+		36B5AC88273D5CAF00BAF8FF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		36B5AC89273D5CB700BAF8FF /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		36B5AC8A273D5D3300BAF8FF /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
+		36B5AC8B273D5D4700BAF8FF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		36B5AC8C273D5D6300BAF8FF /* SetupApp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SetupApp;
+			sourceTree = "<group>";
+		};
+		36B5AC8D273D5D8100BAF8FF /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				363435E8273FC1DA0055D63A /* okey2.mp3 */,
+				36B5AC70273D54D300BAF8FF /* ViewController.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		9E32993EA152F09B74E51BE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				261C2761E959857CA1A50427 /* Pods_ClapToFind.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B5AC80273D54D700BAF8FF /* Build configuration list for PBXNativeTarget "ClapToFind" */;
 			buildPhases = (
+				22C2715EBC6AA6F52F749D12 /* [CP] Check Pods Manifest.lock */,
 				36B5AC65273D54D300BAF8FF /* Sources */,
 				36B5AC66273D54D300BAF8FF /* Frameworks */,
 				36B5AC67273D54D300BAF8FF /* Resources */,
+				479A6CB39AD50DE8E546B869 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,13 +235,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36097E40273EE9E200FAC220 /* sound_classification.tflite in Resources */,
 				36B5AC7C273D54D700BAF8FF /* LaunchScreen.storyboard in Resources */,
+				363435E9273FC1DA0055D63A /* okey2.mp3 in Resources */,
 				36B5AC79273D54D700BAF8FF /* Assets.xcassets in Resources */,
-				36B5AC74273D54D300BAF8FF /* Main.storyboard in Resources */,
+				36097E41273EE9E200FAC220 /* labels.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22C2715EBC6AA6F52F749D12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ClapToFind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		479A6CB39AD50DE8E546B869 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ClapToFind/Pods-ClapToFind-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ClapToFind/Pods-ClapToFind-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ClapToFind/Pods-ClapToFind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36B5AC65273D54D300BAF8FF /* Sources */ = {
@@ -147,7 +295,7 @@
 				36B5AC84273D554C00BAF8FF /* SoundRecognition.swift in Sources */,
 				36B5AC71273D54D300BAF8FF /* ViewController.swift in Sources */,
 				36B5AC6D273D54D300BAF8FF /* AppDelegate.swift in Sources */,
-				36B5AC6F273D54D300BAF8FF /* SceneDelegate.swift in Sources */,
+				36B5AC8F273DA79A00BAF8FF /* AudioInputManager.swift in Sources */,
 				36B5AC77273D54D300BAF8FF /* ClapToFind.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,14 +303,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		36B5AC72273D54D300BAF8FF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36B5AC73273D54D300BAF8FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		36B5AC7A273D54D700BAF8FF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -225,7 +365,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift/**";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -280,7 +421,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift/**";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -292,25 +434,51 @@
 		};
 		36B5AC81273D54D700BAF8FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 380AFC137A21D6C2FF24BC3D /* Pods-ClapToFind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = F26CRWS66V;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_MASTER_OBJECT_FILE = YES;
 				INFOPLIST_FILE = ClapToFind/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need for sound analysis";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
+				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-framework",
+					"\"TensorFlowLite\"",
+					"-framework",
+					"\"TensorFlowLiteC\"",
+					"-framework",
+					"\"TensorFlowLiteSelectTfOps\"",
+					"-weak_framework",
+					"\"CoreML\"",
+					"-force_load",
+					"$(SRCROOT)/Pods/TensorFlowLiteSelectTfOps/Frameworks/TensorFlowLiteSelectTfOps.framework/TensorFlowLiteSelectTfOps",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PolinaProkopenko.ClapToFind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -321,25 +489,51 @@
 		};
 		36B5AC82273D54D700BAF8FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53F7C62C23EDF1E29B89103F /* Pods-ClapToFind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = F26CRWS66V;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_MASTER_OBJECT_FILE = YES;
 				INFOPLIST_FILE = ClapToFind/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need for sound analysis";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
+				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-framework",
+					"\"TensorFlowLite\"",
+					"-framework",
+					"\"TensorFlowLiteC\"",
+					"-framework",
+					"\"TensorFlowLiteSelectTfOps\"",
+					"-weak_framework",
+					"\"CoreML\"",
+					"-force_load",
+					"$(SRCROOT)/Pods/TensorFlowLiteSelectTfOps/Frameworks/TensorFlowLiteSelectTfOps.framework/TensorFlowLiteSelectTfOps",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PolinaProkopenko.ClapToFind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
