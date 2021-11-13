@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 import AVFoundation
 
 
@@ -14,6 +13,7 @@ public protocol AudioInputManagerDelegate: AnyObject {
     func audioInputManagerDidFailToAchievePermission(_ audioManager: AudioInputManager)
     func audioInputManager(_ audioManager: AudioInputManager, didCaptureChannelData channelData: [Int16])
 }
+
 
 /// Class for get sound stream from microphone
 public class AudioInputManager {
@@ -38,13 +38,11 @@ public class AudioInputManager {
         case .granted:
             startTappingMicrophone()
         case .undetermined:
-//            delegate?.audioInputManagerDidFailToAchievePermission(self)
             requestPermissions()
         case .denied:
             requestPermissions()
         @unknown default:
-//            fatalError()
-            requestPermissions()
+            fatalError()
         }
     }
     

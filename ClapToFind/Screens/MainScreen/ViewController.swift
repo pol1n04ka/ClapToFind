@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import RxSwift
+import RxRelay
+import AVFoundation
+
 
 class ViewController: UIViewController {
     
@@ -15,10 +19,25 @@ class ViewController: UIViewController {
     private var bufferSize: Int = 0
     private var probabilities: [Float32] = []
     
-    private var isClap = false
+    // MARK: Variable for check audio
+    private var isClap = BehaviorRelay<Bool>(value: false)
+    
+    // MARK: Variable for player instance
+    private var audioPlayer: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        _ = isClap.subscribe { event in
+            guard let value = event.element else { return }
+            
+            if value == true {
+                self.label.text = "It's clap!"
+                self.playSound()
+            } else {
+                self.label.text = "No clap recognized..."
+            }
+        }
         
         setupView()
         
@@ -54,7 +73,8 @@ class ViewController: UIViewController {
 // MARK: Setup UI
 extension ViewController {
     
-    func setupView() {
+    /// Setting UI
+    private func setupView() {
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -79,6 +99,7 @@ extension ViewController {
 // MARK: Start sound recognition
 extension ViewController {
     
+    /// Turning microphone on and starts sound recognition
     private func startAudioRecognition() {
         audioInputManager = AudioInputManager(sampleRate: soundRecognizer.sampleRate)
         audioInputManager.delegate = self
@@ -88,15 +109,39 @@ extension ViewController {
         audioInputManager.checkPermissionAndStartTappingMicrophone()
     }
     
+    /// Starts model with input buffer
     private func runModel(inputBuffer: [Int16]) {
         soundRecognizer.start(inputBuffer: inputBuffer)
     }
     
 }
 
+// MARK: Play sound
+extension ViewController {
+    
+    /// Play okey sound on recognize clap
+    private func playSound() {
+        let url = Bundle.main.path(forResource: "okey2", ofType: "mp3")
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(string: url!)!)
+            guard let player = audioPlayer else { return }
+            
+            player.prepareToPlay()
+            player.volume = 1.0
+            player.play()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+}
+
+
 // MARK: Audio manager delegate
 extension ViewController: AudioInputManagerDelegate {
     
+    // If user don't get permission to use microphone
     func audioInputManagerDidFailToAchievePermission(_ audioManager: AudioInputManager) {
         let alertController = UIAlertController(
             title: "Microphone permissions denied",
@@ -125,7 +170,7 @@ extension ViewController: AudioInputManagerDelegate {
 
         self.present(alertController, animated: true, completion: nil)
         
-        print("Пиздец")
+        print("Can't use microphone")
     }
     
     func audioInputManager(
@@ -139,6 +184,7 @@ extension ViewController: AudioInputManagerDelegate {
     
 }
 
+
 extension ViewController: SoundRecognitionDelegate {
     
     func soundRecognition(
@@ -148,15 +194,17 @@ extension ViewController: SoundRecognitionDelegate {
         self.probabilities = probabilities
         
         DispatchQueue.main.async {
-//            self.label.text = self.soundRecognizer.labelNames[2]
-            
-            self.label.text = String(self.probabilities[2])
-            
             if self.probabilities[2] > 0.9 {
-                print(self.probabilities[2])
+                if self.isClap.value == false {
+                    self.isClap.accept(true)
+                }
+            } else {
+                if self.isClap.value == true {
+                    self.isClap.accept(false)
+                }
             }
             
-            UIView.animate(withDuration: 0.4) {
+            UIView.animate(withDuration: 0.2) {
                 self.progress.setProgress(self.probabilities[2], animated: true)
             }
         }

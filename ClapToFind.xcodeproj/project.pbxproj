@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		36097E40273EE9E200FAC220 /* sound_classification.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 36097E3E273EE9E100FAC220 /* sound_classification.tflite */; };
 		36097E41273EE9E200FAC220 /* labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 36097E3F273EE9E100FAC220 /* labels.txt */; };
+		363435E9273FC1DA0055D63A /* okey2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 363435E8273FC1DA0055D63A /* okey2.mp3 */; };
 		36B5AC6D273D54D300BAF8FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */; };
 		36B5AC71273D54D300BAF8FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC70273D54D300BAF8FF /* ViewController.swift */; };
 		36B5AC77273D54D300BAF8FF /* ClapToFind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC75273D54D300BAF8FF /* ClapToFind.xcdatamodeld */; };
@@ -23,6 +24,7 @@
 		261C2761E959857CA1A50427 /* Pods_ClapToFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClapToFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36097E3E273EE9E100FAC220 /* sound_classification.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_classification.tflite; sourceTree = "<group>"; };
 		36097E3F273EE9E100FAC220 /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labels.txt; sourceTree = "<group>"; };
+		363435E8273FC1DA0055D63A /* okey2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = okey2.mp3; sourceTree = "<group>"; };
 		36B5AC69273D54D300BAF8FF /* ClapToFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClapToFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36B5AC70273D54D300BAF8FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		36B5AC8D273D5D8100BAF8FF /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				363435E8273FC1DA0055D63A /* okey2.mp3 */,
 				36B5AC70273D54D300BAF8FF /* ViewController.swift */,
 			);
 			path = MainScreen;
@@ -183,6 +186,7 @@
 				36B5AC65273D54D300BAF8FF /* Sources */,
 				36B5AC66273D54D300BAF8FF /* Frameworks */,
 				36B5AC67273D54D300BAF8FF /* Resources */,
+				479A6CB39AD50DE8E546B869 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +237,7 @@
 			files = (
 				36097E40273EE9E200FAC220 /* sound_classification.tflite in Resources */,
 				36B5AC7C273D54D700BAF8FF /* LaunchScreen.storyboard in Resources */,
+				363435E9273FC1DA0055D63A /* okey2.mp3 in Resources */,
 				36B5AC79273D54D700BAF8FF /* Assets.xcassets in Resources */,
 				36097E41273EE9E200FAC220 /* labels.txt in Resources */,
 			);
@@ -261,6 +266,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		479A6CB39AD50DE8E546B869 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ClapToFind/Pods-ClapToFind-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ClapToFind/Pods-ClapToFind-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ClapToFind/Pods-ClapToFind-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
