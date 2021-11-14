@@ -29,13 +29,11 @@ public class SoundRecognition {
     
     // MARK: Variables
     public weak var delegate: SoundRecognitionDelegate?
-    
-    /// Sample rate for input sound buffer. Caution: generally this value is a bit less than 1 second's audio sample.
     private(set) var sampleRate = 0
-    /// Lable names described in the lable file
     private(set) var labelNames: [String] = []
     private var interpreter: Interpreter!
     
+    // MARK: Public methods
     public init(
         modelFileName: String,
         modelFileExtension: String = "tflite",
@@ -49,7 +47,6 @@ public class SoundRecognition {
         self.labelFileExtension = labelFileExtension
         self.delegate = delegate
         
-        // setup interpreter here
         setupInterpreter()
     }
     
@@ -94,6 +91,7 @@ public class SoundRecognition {
         }
     }
     
+    ///  Finds file with `labels` and converts them to array
     private func loadLabels() -> [String] {
         guard let labelPath = Bundle.main.path(
             forResource: labelFileName,
@@ -140,7 +138,7 @@ public class SoundRecognition {
                         count: unsafeData.count / MemoryLayout<Element>.stride
                     ))
         }
-        #endif // swift(>=5.0)
+        #endif
     }
     
 }

@@ -41,7 +41,10 @@ class ViewController: UIViewController {
         
         setupView()
         
-        soundRecognizer = SoundRecognition(modelFileName: "sound_classification", delegate: self)
+        soundRecognizer = SoundRecognition(
+            modelFileName: "soundclassifier_with_metadata",
+            delegate: self
+        )
         
         startAudioRecognition()
     }
@@ -143,33 +146,33 @@ extension ViewController: AudioInputManagerDelegate {
     
     // If user don't get permission to use microphone
     func audioInputManagerDidFailToAchievePermission(_ audioManager: AudioInputManager) {
-        let alertController = UIAlertController(
-            title: "Microphone permissions denied",
-            message: "Microphone permissions have been denied for this app. You can change this by going to Settings",
-            preferredStyle: .alert
-        )
-
-        let cancelButton = UIAlertAction(
-            title: "Cancel",
-            style: .cancel,
-            handler: nil
-        )
-
-        let settingsAction = UIAlertAction(
-            title: "Settings",
-            style: .default
-        ) { _ in
-            UIApplication.shared.open(
-                URL(string: UIApplication.openSettingsURLString)!,
-                options: [:],
-                completionHandler: nil)
-        }
-
-        alertController.addAction(cancelButton)
-        alertController.addAction(settingsAction)
-
-        self.present(alertController, animated: true, completion: nil)
-        
+//        let alertController = UIAlertController(
+//            title: "Microphone permissions denied",
+//            message: "Microphone permissions have been denied for this app. You can change this by going to Settings",
+//            preferredStyle: .alert
+//        )
+//
+//        let cancelButton = UIAlertAction(
+//            title: "Cancel",
+//            style: .cancel,
+//            handler: nil
+//        )
+//
+//        let settingsAction = UIAlertAction(
+//            title: "Settings",
+//            style: .default
+//        ) { _ in
+//            UIApplication.shared.open(
+//                URL(string: UIApplication.openSettingsURLString)!,
+//                options: [:],
+//                completionHandler: nil)
+//        }
+//
+//        alertController.addAction(cancelButton)
+//        alertController.addAction(settingsAction)
+//
+//        self.present(alertController, animated: true, completion: nil)
+//
         print("Can't use microphone")
     }
     
@@ -185,6 +188,7 @@ extension ViewController: AudioInputManagerDelegate {
 }
 
 
+// MARK: Sound recognition delegate
 extension ViewController: SoundRecognitionDelegate {
     
     func soundRecognition(
@@ -211,4 +215,3 @@ extension ViewController: SoundRecognitionDelegate {
     }
     
 }
-

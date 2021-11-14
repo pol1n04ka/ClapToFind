@@ -1,3 +1,8 @@
-0 snap
-1 _background_noise_
-2 clap
+0 Background Noise
+1 Can
+2 Clap
+3 Hit
+4 Keyboard
+5 Loud speech
+6 Something noise
+7 Speech
