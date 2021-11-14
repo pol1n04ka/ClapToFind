@@ -56,6 +56,27 @@ public class AudioInputManager {
         }
     }
     
+    /// Changes category of audio session for record or play sound
+    ///  ```
+    ///  true // record mode
+    ///  false // play mode
+    public func setListenOrPlayMode(_ modeToSet: Bool) {
+        let mode: AVAudioSession.Category
+    
+        switch modeToSet {
+        case true:
+            mode = .record
+        case false:
+            mode = .ambient
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(mode)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     public func startTappingMicrophone() {
         let inputNode = audioEngine.inputNode
         let inputFormat = inputNode.outputFormat(forBus: 0)
@@ -107,6 +128,7 @@ public class AudioInputManager {
         
         audioEngine.prepare()
         do {
+            setListenOrPlayMode(true)
             try audioEngine.start()
         } catch {
             print(error.localizedDescription)

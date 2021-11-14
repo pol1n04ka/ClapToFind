@@ -120,7 +120,7 @@ extension ViewController {
 }
 
 // MARK: Play sound
-extension ViewController {
+extension ViewController: AVAudioPlayerDelegate {
     
     /// Play okey sound on recognize clap
     private func playSound() {
@@ -128,14 +128,21 @@ extension ViewController {
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL(string: url!)!)
-            guard let player = audioPlayer else { return }
+            audioInputManager.setListenOrPlayMode(false)
             
+            guard let player = audioPlayer else { return }
+
+            player.delegate = self
             player.prepareToPlay()
             player.volume = 1.0
             player.play()
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        audioInputManager.setListenOrPlayMode(true)
     }
     
 }
