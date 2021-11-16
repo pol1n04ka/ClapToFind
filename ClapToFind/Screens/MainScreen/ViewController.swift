@@ -46,7 +46,9 @@ class ViewController: UIViewController {
             delegate: self
         )
         
+        
         startAudioRecognition()
+        audioInputManager.setListenOrPlayMode(true)
     }
     
     // MARK: UI elements
@@ -127,8 +129,8 @@ extension ViewController: AVAudioPlayerDelegate {
         let url = Bundle.main.path(forResource: "okey", ofType: "mp3")
         
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL(string: url!)!)
             audioInputManager.setListenOrPlayMode(false)
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(string: url!)!)
             
             guard let player = audioPlayer else { return }
 
@@ -142,7 +144,9 @@ extension ViewController: AVAudioPlayerDelegate {
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        audioInputManager.audioEngine.stop()
         audioInputManager.setListenOrPlayMode(true)
+        startAudioRecognition()
     }
     
 }

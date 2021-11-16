@@ -25,7 +25,7 @@ public class AudioInputManager {
     
     // MARK: Variables
     public weak var delegate: AudioInputManagerDelegate?
-    private let audioEngine = AVAudioEngine()
+    public let audioEngine = AVAudioEngine()
     
     // MARK: Methods
     public init(sampleRate: Int) {
@@ -62,16 +62,22 @@ public class AudioInputManager {
     ///  false // play mode
     public func setListenOrPlayMode(_ modeToSet: Bool) {
         let mode: AVAudioSession.Category
+        let options: AVAudioSession.CategoryOptions
     
         switch modeToSet {
         case true:
-            mode = .record
+            mode = .playAndRecord
+            options = [.mixWithOthers]
+            print("Setting category to record")
         case false:
-            mode = .ambient
+            mode = .playAndRecord
+            options = [.defaultToSpeaker]
+            print("Setting category to playback")
         }
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(mode)
+            try AVAudioSession.sharedInstance().setCategory(mode, options: options)
+            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
         } catch {
             print(error.localizedDescription)
         }
@@ -128,7 +134,6 @@ public class AudioInputManager {
         
         audioEngine.prepare()
         do {
-            setListenOrPlayMode(true)
             try audioEngine.start()
         } catch {
             print(error.localizedDescription)
