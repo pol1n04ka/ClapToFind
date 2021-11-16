@@ -40,9 +40,9 @@ public class AudioInputManager {
         case .undetermined:
             requestPermissions()
         case .denied:
-            requestPermissions()
+            delegate?.audioInputManagerDidFailToAchievePermission(self)
         @unknown default:
-            fatalError()
+            requestPermissions()
         }
     }
     
@@ -68,11 +68,11 @@ public class AudioInputManager {
         case true:
             mode = .playAndRecord
             options = [.mixWithOthers]
-            print("Setting category to record")
+//            print("Setting category to record")
         case false:
             mode = .playAndRecord
             options = [.defaultToSpeaker]
-            print("Setting category to playback")
+//            print("Setting category to playback")
         }
         
         do {
