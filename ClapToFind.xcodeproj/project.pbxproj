@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		363435E9273FC1DA0055D63A /* okey2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 363435E8273FC1DA0055D63A /* okey2.mp3 */; };
+		363435E9273FC1DA0055D63A /* okey.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 363435E8273FC1DA0055D63A /* okey.mp3 */; };
 		364DE326274154940004CC9C /* labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 364DE324274154940004CC9C /* labels.txt */; };
 		364DE327274154940004CC9C /* soundclassifier_with_metadata.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 364DE325274154940004CC9C /* soundclassifier_with_metadata.tflite */; };
 		36B5AC6D273D54D300BAF8FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */; };
@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		261C2761E959857CA1A50427 /* Pods_ClapToFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClapToFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		363435E8273FC1DA0055D63A /* okey2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = okey2.mp3; sourceTree = "<group>"; };
+		363435E8273FC1DA0055D63A /* okey.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = okey.mp3; sourceTree = "<group>"; };
 		364DE324274154940004CC9C /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labels.txt; sourceTree = "<group>"; };
 		364DE325274154940004CC9C /* soundclassifier_with_metadata.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = soundclassifier_with_metadata.tflite; sourceTree = "<group>"; };
 		36B5AC69273D54D300BAF8FF /* ClapToFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClapToFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +161,7 @@
 		36B5AC8D273D5D8100BAF8FF /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				363435E8273FC1DA0055D63A /* okey2.mp3 */,
+				363435E8273FC1DA0055D63A /* okey.mp3 */,
 				36B5AC70273D54D300BAF8FF /* ViewController.swift */,
 			);
 			path = MainScreen;
@@ -237,7 +237,7 @@
 			files = (
 				36B5AC7C273D54D700BAF8FF /* LaunchScreen.storyboard in Resources */,
 				364DE327274154940004CC9C /* soundclassifier_with_metadata.tflite in Resources */,
-				363435E9273FC1DA0055D63A /* okey2.mp3 in Resources */,
+				363435E9273FC1DA0055D63A /* okey.mp3 in Resources */,
 				36B5AC79273D54D700BAF8FF /* Assets.xcassets in Resources */,
 				364DE326274154940004CC9C /* labels.txt in Resources */,
 			);

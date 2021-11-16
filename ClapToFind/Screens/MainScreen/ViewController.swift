@@ -124,7 +124,7 @@ extension ViewController: AVAudioPlayerDelegate {
     
     /// Play okey sound on recognize clap
     private func playSound() {
-        let url = Bundle.main.path(forResource: "okey2", ofType: "mp3")
+        let url = Bundle.main.path(forResource: "okey", ofType: "mp3")
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL(string: url!)!)
