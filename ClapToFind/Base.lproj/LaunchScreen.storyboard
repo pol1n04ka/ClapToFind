@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Quicksand-Bold.ttf">
+            <string>Quicksand-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -20,18 +25,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClapingAndPhone" translatesAutoresizingMaskIntoConstraints="NO" id="YLG-dz-LFB">
-                                <rect key="frame" x="57" y="298" width="300" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="6pU-rh-6dD"/>
-                                    <constraint firstAttribute="height" constant="300" id="rsx-Wh-f8p"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clap To Find" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hh-3C-ni2">
+                                <rect key="frame" x="136.5" y="584" width="141" height="30"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClappingAndPhone" translatesAutoresizingMaskIntoConstraints="NO" id="xJM-37-QEW">
+                                <rect key="frame" x="57" y="274" width="300" height="300"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <constraints>
-                            <constraint firstItem="YLG-dz-LFB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3ts-ht-b5b"/>
-                            <constraint firstItem="YLG-dz-LFB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="g2l-hU-rzu"/>
+                            <constraint firstItem="xJM-37-QEW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-24" id="2Op-8B-QB6"/>
+                            <constraint firstItem="xJM-37-QEW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="JGp-sU-3OD"/>
+                            <constraint firstItem="8hh-3C-ni2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Kcv-e1-KEf"/>
+                            <constraint firstItem="8hh-3C-ni2" firstAttribute="top" secondItem="xJM-37-QEW" secondAttribute="bottom" constant="10" id="nZM-0u-vS5"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -41,7 +50,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ClapingAndPhone" width="300" height="300"/>
+        <image name="ClappingAndPhone" width="300" height="300"/>
         <image name="Gradient" width="100" height="100"/>
     </resources>
 </document>

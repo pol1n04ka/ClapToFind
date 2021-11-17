@@ -13,6 +13,12 @@ import AVFoundation
 
 class MainView: UIViewController {
     
+    // MARK: UI elements
+    let gradient = Gradient()
+    lazy var image = ImageView(image: .clappingAndPhone)
+    lazy var headingLabel = Label(style: .heading, "Clap To Find")
+    lazy var label = Label(style: .body, "Put your device to sleep and quickly clap one-two times, the device will ring.")
+    
     // MARK: Variables for audio recognition
     private var audioInputManager: AudioInputManager!
     private var soundRecognizer: SoundRecognition!
@@ -25,21 +31,14 @@ class MainView: UIViewController {
     // MARK: Variable for player instance
     private var audioPlayer: AVAudioPlayer!
 
+    // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _ = isClap.subscribe { event in
-            guard let value = event.element else { return }
-            
-            if value == true {
-                self.label.text = "It's clap!"
-                self.playSound()
-            } else {
-                self.label.text = "No clap recognized..."
-            }
-        }
-        
+        gradient.setGradientBackground(view: view)
         setupView()
+        
+        bindIsClap()
         
         soundRecognizer = SoundRecognition(
             modelFileName: "soundclassifier_with_metadata",
@@ -47,6 +46,7 @@ class MainView: UIViewController {
         )
     }
     
+    // MARK: ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -54,27 +54,6 @@ class MainView: UIViewController {
         audioInputManager.setListenOrPlayMode(true)
     }
     
-    // MARK: UI elements
-    lazy var label: UILabel = {
-        let l = UILabel()
-        
-        l.sizeToFit()
-        l.textColor = .black
-        l.translatesAutoresizingMaskIntoConstraints = false
-        l.text = "Something"
-        l.textAlignment = .center
-        
-        return l
-    }()
-    
-    lazy var progress: UIProgressView = {
-        let p = UIProgressView()
-        
-        p.translatesAutoresizingMaskIntoConstraints = false
-        
-        return p
-    }()
-
 }
 
 
@@ -83,19 +62,22 @@ extension MainView {
     
     /// Setting UI
     private func setupView() {
-        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         
-        
+        view.addSubview(image)
+        view.addSubview(headingLabel)
         view.addSubview(label)
-        view.addSubview(progress)
         
         let constraints = [
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            progress.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20),
-            progress.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
-            progress.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30)
+            image.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            image.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
+            
+            headingLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            headingLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 10),
+            
+            label.topAnchor.constraint(equalTo: headingLabel.bottomAnchor, constant: 10),
+            label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
         ]
         
         NSLayoutConstraint.activate(constraints)
@@ -106,6 +88,17 @@ extension MainView {
 
 // MARK: Start sound recognition
 extension MainView {
+    
+    /// Binds isClap observable to view
+    private func bindIsClap() {
+        _ = isClap.subscribe { event in
+            guard let value = event.element else { return }
+            
+            if value == true {
+                self.playSound()
+            }
+        }
+    }
     
     /// Turning microphone on and starts sound recognition
     private func startAudioRecognition() {
@@ -186,8 +179,6 @@ extension MainView: AudioInputManagerDelegate {
         alertController.addAction(settingsAction)
 
         self.present(alertController, animated: true, completion: nil)
-
-        print("Can't use microphone")
     }
     
     func audioInputManager(
@@ -220,10 +211,6 @@ extension MainView: SoundRecognitionDelegate {
                 if self.isClap.value == true {
                     self.isClap.accept(false)
                 }
-            }
-            
-            UIView.animate(withDuration: 0.2) {
-                self.progress.setProgress(self.probabilities[2], animated: true)
             }
         }
     }
