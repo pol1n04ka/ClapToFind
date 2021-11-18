@@ -18,6 +18,7 @@ class MainView: UIViewController {
     lazy var image = ImageView(image: .clappingAndPhone)
     lazy var headingLabel = Label(style: .heading, "Clap To Find")
     lazy var label = Label(style: .body, "Put your device to sleep and quickly clap one-two times, the device will ring.")
+    lazy var settingsButton = Button(style: .settings, nil)
     
     // MARK: Variables for audio recognition
     private var audioInputManager: AudioInputManager!
@@ -48,10 +49,22 @@ class MainView: UIViewController {
     
     // MARK: ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        super.viewDidAppear(true)
         
-        startAudioRecognition()
-        audioInputManager.setListenOrPlayMode(true)
+        if audioInputManager == nil {
+            startAudioRecognition()
+            audioInputManager.setListenOrPlayMode(true)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationController?.navigationBar.isHidden = true
+        
+        UIView.transition(with: self.navigationController!.navigationBar, duration: 0.1, options: .transitionCrossDissolve, animations: {}, completion: { _ in })
+        
+        updateViewConstraints()
     }
     
 }
@@ -62,11 +75,13 @@ extension MainView {
     
     /// Setting UI
     private func setupView() {
-        view.translatesAutoresizingMaskIntoConstraints = false
+        settingsButton.layer.zPosition = 10
+        settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
         
         view.addSubview(image)
         view.addSubview(headingLabel)
         view.addSubview(label)
+        view.addSubview(settingsButton)
         
         let constraints = [
             image.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -78,9 +93,22 @@ extension MainView {
             label.topAnchor.constraint(equalTo: headingLabel.bottomAnchor, constant: 10),
             label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            
+            settingsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 25),
+            settingsButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25)
         ]
         
         NSLayoutConstraint.activate(constraints)
+    }
+    
+}
+
+
+// MARK: Settings button action
+extension MainView {
+    
+    @objc func openSettings() {
+        navigationController?.pushViewController(SettingsView(), animated: true)
     }
     
 }

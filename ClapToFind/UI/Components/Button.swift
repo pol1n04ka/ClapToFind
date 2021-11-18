@@ -35,10 +35,11 @@ public class Button: UIButton {
             setTitleColor(.white, for: .normal)
             titleLabel?.font = UIFont(name: "Quicksand-Medium", size: 13)!
         case .settings:
-            break
+            setImage(UIImage(named: "SettingsIcon"), for: .normal)
+            heightAnchor.constraint(equalToConstant: 25).isActive = true
+            widthAnchor.constraint(equalToConstant: 25).isActive = true
         case .close:
             setImage(UIImage(named: "ExitIcon"), for: .normal)
-            
             heightAnchor.constraint(equalToConstant: 25).isActive = true
             widthAnchor.constraint(equalToConstant: 25).isActive = true
         }

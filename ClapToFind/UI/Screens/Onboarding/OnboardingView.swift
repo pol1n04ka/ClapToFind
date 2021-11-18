@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import StoreKit
 
 
 class OnboardingView: UIViewController {
+    
+    private let app = UIApplication.shared.delegate
+    private var currentIndex: IndexPath = .init(index: 0)
     
     // MARK: UI elements
     
@@ -48,6 +52,14 @@ class OnboardingView: UIViewController {
         super.viewDidAppear(animated)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func rateApp() {
+        SKStoreReviewController.requestReview()
+    }
+    
 }
 
 
@@ -56,13 +68,26 @@ extension OnboardingView {
     
     func setupView() {
         
+        
+        closeButton.isHidden = true
+        closeButton.layer.zPosition = 10
+        closeButton.addTarget(self, action: #selector(closeOnboarding), for: .touchUpInside)
+        
+        // MARK: Go to next page
+        continueButton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
+        
+        termsOfUseButton.addTarget(self, action: #selector(getTermsOfUse), for: .touchUpInside)
+        privacyPolicyButton.addTarget(self, action: #selector(getPrivacyPolicy), for: .touchUpInside)
+        restorePurchaseButton.addTarget(self, action: #selector(getRestorePurchase), for: .touchUpInside)
+        
+        // MARK: Register slides
         collectionView.register(ProblemSlide.self, forCellWithReuseIdentifier: ProblemSlide.identifier)
         collectionView.register(RatingSlide.self, forCellWithReuseIdentifier: RatingSlide.identifier)
         collectionView.register(ClapSlide.self, forCellWithReuseIdentifier: ClapSlide.identifier)
         collectionView.register(RingingPhoneSlide.self, forCellWithReuseIdentifier: RingingPhoneSlide.identifier)
         collectionView.register(SubscribeSlide.self, forCellWithReuseIdentifier: SubscribeSlide.identifier)
         
-        closeButton.layer.zPosition = 10
+        
         
         view.addSubview(pageControl)
         view.addSubview(collectionView)
@@ -108,6 +133,54 @@ extension OnboardingView {
     
 }
 
+// MARK: Button actions
+extension OnboardingView {
+    
+    @objc func closeOnboarding() {
+        guard let optionalWindow = app?.window else { return }
+        guard let window = optionalWindow else { return }
+        
+        let vc = NavigationController(rootViewController: MainView())
+        window.rootViewController = vc
+        
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {}, completion: { completed in
+            print("Close onboarding animation ends")
+        })
+        
+        OnboardingManager.shared.isFirstLaunch = true
+    }
+    
+    @objc func nextPage() {
+        if currentIndex.row < 4 {
+            collectionView.scrollToItem(at: IndexPath(arrayLiteral: 0, currentIndex.row + 1), at: .centeredHorizontally, animated: true)
+        } else {
+            closeOnboarding()
+        }
+    }
+    
+    @objc func getTermsOfUse() {
+        print("Terms of use")
+        
+        let url = URL(string: "https://www.google.com/")
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    }
+    
+    @objc func getPrivacyPolicy() {
+        print("Privacy policy")
+        
+        let url = URL(string: "https://www.google.com/")
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    }
+    
+    @objc func getRestorePurchase() {
+        print("Restore purchase")
+        
+        let url = URL(string: "https://www.google.com/")
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    }
+    
+}
+
 
 // MARK: Collection view data source
 extension OnboardingView: UICollectionViewDataSource {
@@ -125,7 +198,7 @@ extension OnboardingView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         var slide: String
-        
+
         switch indexPath.row {
         case 0:
             slide = ProblemSlide.identifier
@@ -155,7 +228,6 @@ extension OnboardingView: UICollectionViewDelegateFlowLayout {
         let itemWidth = collectionView.bounds.width
         let itemHeight = collectionView.bounds.height
         
-        
         return CGSize(width: itemWidth, height: itemHeight)
     }
     
@@ -171,6 +243,18 @@ extension OnboardingView: UICollectionViewDelegateFlowLayout {
             progress: indexPath.row,
             animated: true
         )
+        
+        if indexPath.row == 4 {
+            closeButton.isHidden = false
+        } else {
+            closeButton.isHidden = true
+        }
+        
+        if indexPath.row == 1 {
+            rateApp()
+        }
+        
+        currentIndex = indexPath
     }
     
 }

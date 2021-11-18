@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "chevron_24.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -9,7 +10,6 @@
       "scale" : "2x"
     },
     {
-      "filename" : "Frame 421-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

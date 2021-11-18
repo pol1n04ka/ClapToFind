@@ -12,5 +12,9 @@
 		<string>audio</string>
 		<string>processing</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIStatusBarTintParameters</key>
+	<dict/>
 </dict>
 </plist>

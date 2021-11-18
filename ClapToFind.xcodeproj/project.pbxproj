@@ -12,7 +12,6 @@
 		364DE327274154940004CC9C /* soundclassifier_with_metadata.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 364DE325274154940004CC9C /* soundclassifier_with_metadata.tflite */; };
 		36B5AC6D273D54D300BAF8FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */; };
 		36B5AC71273D54D300BAF8FF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC70273D54D300BAF8FF /* MainView.swift */; };
-		36B5AC77273D54D300BAF8FF /* ClapToFind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC75273D54D300BAF8FF /* ClapToFind.xcdatamodeld */; };
 		36B5AC79273D54D700BAF8FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC78273D54D700BAF8FF /* Assets.xcassets */; };
 		36B5AC7C273D54D700BAF8FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B5AC7A273D54D700BAF8FF /* LaunchScreen.storyboard */; };
 		36B5AC84273D554C00BAF8FF /* SoundRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B5AC83273D554C00BAF8FF /* SoundRecognition.swift */; };
@@ -34,6 +33,8 @@
 		36E156002745C3A5002832FE /* ClapSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E155FF2745C3A5002832FE /* ClapSlide.swift */; };
 		36E156022745C6C6002832FE /* RingingPhoneSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E156012745C6C6002832FE /* RingingPhoneSlide.swift */; };
 		36E156042745CA3D002832FE /* SubscribeSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E156032745CA3D002832FE /* SubscribeSlide.swift */; };
+		36F1CCE4274623F400FA5681 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F1CCE3274623F400FA5681 /* NavigationController.swift */; };
+		36F1CCE827463F6300FA5681 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F1CCE727463F6300FA5681 /* OnboardingManager.swift */; };
 		FEB43B0D8A5D05438040789C /* Pods_ClapToFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261C2761E959857CA1A50427 /* Pods_ClapToFind.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +46,6 @@
 		36B5AC69273D54D300BAF8FF /* ClapToFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClapToFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36B5AC70273D54D300BAF8FF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		36B5AC76273D54D300BAF8FF /* ClapToFind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClapToFind.xcdatamodel; sourceTree = "<group>"; };
 		36B5AC78273D54D700BAF8FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B5AC7B273D54D700BAF8FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36B5AC7D273D54D700BAF8FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +68,8 @@
 		36E155FF2745C3A5002832FE /* ClapSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClapSlide.swift; sourceTree = "<group>"; };
 		36E156012745C6C6002832FE /* RingingPhoneSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingPhoneSlide.swift; sourceTree = "<group>"; };
 		36E156032745CA3D002832FE /* SubscribeSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeSlide.swift; sourceTree = "<group>"; };
+		36F1CCE3274623F400FA5681 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		36F1CCE727463F6300FA5681 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 		380AFC137A21D6C2FF24BC3D /* Pods-ClapToFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClapToFind.debug.xcconfig"; path = "Target Support Files/Pods-ClapToFind/Pods-ClapToFind.debug.xcconfig"; sourceTree = "<group>"; };
 		53F7C62C23EDF1E29B89103F /* Pods-ClapToFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClapToFind.release.xcconfig"; path = "Target Support Files/Pods-ClapToFind/Pods-ClapToFind.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				36E155F427458D0B002832FE /* PageControl.swift */,
 				36E155F6274590BE002832FE /* Collection.swift */,
 				36E155F82745B035002832FE /* Stack.swift */,
+				36F1CCE3274623F400FA5681 /* NavigationController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -137,13 +140,12 @@
 		36B5AC6B273D54D300BAF8FF /* ClapToFind */ = {
 			isa = PBXGroup;
 			children = (
-				36E155E527455498002832FE /* UI */,
 				36B5AC87273D5C3E00BAF8FF /* SoundRecognition */,
+				36E155E527455498002832FE /* UI */,
 				36B5AC6C273D54D300BAF8FF /* AppDelegate.swift */,
 				36B5AC78273D54D700BAF8FF /* Assets.xcassets */,
 				36B5AC7A273D54D700BAF8FF /* LaunchScreen.storyboard */,
 				36B5AC7D273D54D700BAF8FF /* Info.plist */,
-				36B5AC75273D54D300BAF8FF /* ClapToFind.xcdatamodeld */,
 			);
 			path = ClapToFind;
 			sourceTree = "<group>";
@@ -174,6 +176,7 @@
 			children = (
 				36E155FA2745B373002832FE /* Slides */,
 				36E155F227456F1B002832FE /* OnboardingView.swift */,
+				36F1CCE727463F6300FA5681 /* OnboardingManager.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				36E155F7274590BE002832FE /* Collection.swift in Sources */,
 				36B5AC71273D54D300BAF8FF /* MainView.swift in Sources */,
 				36E155F527458D0B002832FE /* PageControl.swift in Sources */,
+				36F1CCE827463F6300FA5681 /* OnboardingManager.swift in Sources */,
 				36E156022745C6C6002832FE /* RingingPhoneSlide.swift in Sources */,
 				36B5AC6D273D54D300BAF8FF /* AppDelegate.swift in Sources */,
 				36E155E727455F98002832FE /* Gradient.swift in Sources */,
@@ -376,10 +380,10 @@
 				36E155EB27455FAB002832FE /* Button.swift in Sources */,
 				36E155F327456F1B002832FE /* OnboardingView.swift in Sources */,
 				36E155FE2745C04B002832FE /* RatingSlide.swift in Sources */,
-				36B5AC77273D54D300BAF8FF /* ClapToFind.xcdatamodeld in Sources */,
 				36E155F127456ED9002832FE /* SubscribeView.swift in Sources */,
 				36E156002745C3A5002832FE /* ClapSlide.swift in Sources */,
 				36E155F92745B035002832FE /* Stack.swift in Sources */,
+				36F1CCE4274623F400FA5681 /* NavigationController.swift in Sources */,
 				36E155FC2745B38C002832FE /* ProblemSlide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,8 +538,9 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need for sound analysis";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -589,8 +594,9 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need for sound analysis";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -648,19 +654,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		36B5AC75273D54D300BAF8FF /* ClapToFind.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				36B5AC76273D54D300BAF8FF /* ClapToFind.xcdatamodel */,
-			);
-			currentVersion = 36B5AC76273D54D300BAF8FF /* ClapToFind.xcdatamodel */;
-			path = ClapToFind.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 36B5AC61273D54D300BAF8FF /* Project object */;
 }
