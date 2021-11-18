@@ -168,10 +168,17 @@ extension MainView: AVAudioPlayerDelegate {
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        DispatchQueue.global(qos: .background).async {
+        switch UIApplication.shared.applicationState {
+          case .active:
             self.audioInputManager.audioEngine.stop()
             self.audioInputManager.setListenOrPlayMode(true)
             self.startAudioRecognition()
+          case .background:
+            self.audioInputManager.audioEngine.stop()
+            self.audioInputManager.setListenOrPlayMode(true)
+            self.startAudioRecognition()
+          case .inactive:
+            break
         }
     }
     

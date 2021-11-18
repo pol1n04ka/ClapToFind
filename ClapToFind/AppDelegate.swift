@@ -17,12 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-//        if OnboardingManager.shared.isFirstLaunch {
-//            window?.rootViewController = OnboardingView()
-//        } else {
-//            window?.rootViewController = NavigationController(rootViewController: MainView())
-//        }
-        window?.rootViewController = OnboardingView()
+        if OnboardingManager.shared.isFirstLaunch {
+            window?.rootViewController = OnboardingView()
+        } else {
+            window?.rootViewController = NavigationController(rootViewController: MainView())
+        }
         
 //        window?.rootViewController = SubscribeView()
         
