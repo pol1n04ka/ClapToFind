@@ -94,8 +94,8 @@ extension MainView {
             label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             
-            settingsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 25),
-            settingsButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25)
+            settingsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            settingsButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ]
         
         NSLayoutConstraint.activate(constraints)
@@ -168,9 +168,11 @@ extension MainView: AVAudioPlayerDelegate {
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        audioInputManager.audioEngine.stop()
-        audioInputManager.setListenOrPlayMode(true)
-        startAudioRecognition()
+        DispatchQueue.global(qos: .background).async {
+            self.audioInputManager.audioEngine.stop()
+            self.audioInputManager.setListenOrPlayMode(true)
+            self.startAudioRecognition()
+        }
     }
     
 }

@@ -41,7 +41,7 @@ extension RingingPhoneSlide {
         stackView.addArrangedSubview(heading)
         stackView.addArrangedSubview(body)
         
-        stackView.setCustomSpacing(30, after: image)
+        stackView.setCustomSpacing(-5, after: image)
         stackView.setCustomSpacing(10, after: heading)
         
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -50,8 +50,8 @@ extension RingingPhoneSlide {
         
         let constraints = [
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25)
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ]
         
         NSLayoutConstraint.activate(constraints)

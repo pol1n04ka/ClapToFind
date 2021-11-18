@@ -26,10 +26,10 @@ public class Label: UILabel {
         
         switch style {
         case .heading:
-            font = UIFont(name: "Quicksand-Bold", size: 24)
+            font = UIFont(name: "Quicksand-Bold", size: 19) // 22
             numberOfLines = 0
         case .body:
-            font = UIFont(name: "Quicksand-Medium", size: 17)
+            font = UIFont(name: "Quicksand-Medium", size: 16)
             numberOfLines = 0
         case .separator:
             font = UIFont(name: "Quicksand-Medium", size: 13)

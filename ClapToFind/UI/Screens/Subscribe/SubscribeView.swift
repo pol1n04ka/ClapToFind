@@ -102,7 +102,7 @@ extension SubscribeView {
         stackViewForContent.addArrangedSubview(heading)
         stackViewForContent.addArrangedSubview(body)
         
-        stackViewForContent.setCustomSpacing(30, after: image)
+        stackViewForContent.setCustomSpacing(10, after: image)
         stackViewForContent.setCustomSpacing(10, after: heading)
         
         view.addSubview(continueButton)
