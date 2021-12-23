@@ -9,6 +9,7 @@ import UIKit
 
 
 public class Label: UILabel {
+    
     public enum LabelStyle {
         case heading
         case body
@@ -18,21 +19,23 @@ public class Label: UILabel {
     init(style: LabelStyle, _ text: String?) {
         super.init(frame: .zero)
         
-        translatesAutoresizingMaskIntoConstraints = false
         sizeToFit()
-        textColor = .white
+        
+        textColor     = .white
         textAlignment = .center
-        self.text = text
+        self.text     = text
+        
+        translatesAutoresizingMaskIntoConstraints = false
         
         switch style {
         case .heading:
-            font = UIFont(name: "Quicksand-Bold", size: 19) // 22
+            font          = UIFont(name: "Quicksand-Bold", size: 19)
             numberOfLines = 0
         case .body:
-            font = UIFont(name: "Quicksand-Medium", size: 16)
+            font          = UIFont(name: "Quicksand-Medium", size: 16)
             numberOfLines = 0
         case .separator:
-            font = UIFont(name: "Quicksand-Medium", size: 13)
+            font      = UIFont(name: "Quicksand-Medium", size: 13)
             self.text = "|"
         }
     }
@@ -40,4 +43,5 @@ public class Label: UILabel {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }

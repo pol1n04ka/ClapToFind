@@ -12,9 +12,9 @@ class RingingPhoneSlide: UICollectionViewCell {
     
     public static let identifier = "RingingPhoneSlide"
     
-    lazy var image = ImageView(image: .ringingPhone)
+    lazy var image   = ImageView(image: .ringingPhone)
     lazy var heading = Label(style: .heading, "Your phone will make a sound")
-    lazy var body = Label(style: .body, "You made it!")
+    lazy var body    = Label(style: .body, "You made it!")
     
     lazy var stackView = StackView(axis: .vertical)
     

@@ -12,9 +12,9 @@ class ClapSlide: UICollectionViewCell {
     
     public static let identifier = "ClapSlide"
     
-    lazy var image = ImageView(image: .clapping)
+    lazy var image   = ImageView(image: .clapping)
     lazy var heading = Label(style: .heading, "Just clap one-two times")
-    lazy var body = Label(style: .body, "Wait a second...")
+    lazy var body    = Label(style: .body, "Wait a second...")
     
     lazy var stackView = StackView(axis: .vertical)
     

@@ -21,9 +21,9 @@ public class ImageView: UIImageView {
     init(image: Image) {
         super.init(frame: CGRect(x: 0, y: 0, width: 280, height: 280))
         
-//        sizeToFit()
         clipsToBounds = true
-        contentMode = .scaleAspectFit
+        contentMode   = .scaleAspectFit
+        
         translatesAutoresizingMaskIntoConstraints = false
         
         switch image {

@@ -13,7 +13,7 @@ class CollectionView: UICollectionView {
     let layout = UICollectionViewFlowLayout()
     
     func setupLayout() {
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection    = .horizontal
         layout.minimumLineSpacing = 0
     }
     
@@ -21,11 +21,12 @@ class CollectionView: UICollectionView {
         super.init(frame: .zero, collectionViewLayout: layout)
         setupLayout()
         
-        self.delegate = delegate
+        self.delegate   = delegate
         self.dataSource = dataSource
         backgroundColor = .clear
         isPagingEnabled = true
-        showsVerticalScrollIndicator = false
+        
+        showsVerticalScrollIndicator   = false
         showsHorizontalScrollIndicator = false
         
         translatesAutoresizingMaskIntoConstraints = false

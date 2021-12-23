@@ -20,8 +20,9 @@ public class Button: UIButton {
     init(style: ButtonStyle, _ text: String?) {
         super.init(frame: .zero)
         
-        translatesAutoresizingMaskIntoConstraints = false
         sizeToFit()
+        
+        translatesAutoresizingMaskIntoConstraints = false
         
         switch style {
         case ._continue:

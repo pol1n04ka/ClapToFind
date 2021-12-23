@@ -15,16 +15,17 @@ class MainView: UIViewController {
     
     // MARK: UI elements
     let gradient = Gradient()
-    lazy var image = ImageView(image: .clappingAndPhone)
-    lazy var headingLabel = Label(style: .heading, "Clap To Find")
-    lazy var label = Label(style: .body, "Put your device to sleep and quickly clap one-two times, the device will ring.")
+    
+    lazy var image          = ImageView(image: .clappingAndPhone)
+    lazy var headingLabel   = Label(style: .heading, "Clap To Find")
+    lazy var label          = Label(style: .body, "Put your device to sleep and quickly clap one-two times, the device will ring.")
     lazy var settingsButton = Button(style: .settings, nil)
     
     // MARK: Variables for audio recognition
     private var audioInputManager: AudioInputManager!
-    private var soundRecognizer: SoundRecognition!
-    private var bufferSize: Int = 0
-    private var probabilities: [Float32] = []
+    private var soundRecognizer:   SoundRecognition!
+    private var bufferSize:        Int = 0
+    private var probabilities:     [Float32] = []
     
     // MARK: Variable for check audio
     private var isClap = BehaviorRelay<Bool>(value: false)

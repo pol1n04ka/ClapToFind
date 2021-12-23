@@ -18,15 +18,15 @@ public class StackView: UIStackView {
     init(axis: StackViewAxis) {
         super.init(frame: .zero)
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
         switch axis {
         case .horizontal:
-            self.axis = .horizontal
+            self.axis    = .horizontal
             distribution = .fillProportionally
         case .vertical:
             self.axis = .vertical
         }
-    
-        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init(coder: NSCoder) {

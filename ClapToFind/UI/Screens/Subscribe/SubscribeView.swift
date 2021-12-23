@@ -16,9 +16,9 @@ class SubscribeView: UIViewController {
     
     lazy var closeButton = Button(style: .close, nil)
     
-    lazy var image = ImageView(image: .clappingAndPhone)
+    lazy var image   = ImageView(image: .clappingAndPhone)
     lazy var heading = Label(style: .heading, "Clap To Find")
-    lazy var body = Label(style: .body, "Subscribe to unlock all the features, just $9.99/week")
+    lazy var body    = Label(style: .body, "Subscribe to unlock all the features, just $9.99/week")
     
     lazy var continueButton = Button(style: ._continue, "Continue")
     
@@ -30,7 +30,7 @@ class SubscribeView: UIViewController {
     lazy var separatorTwo = Label(style: .separator, nil)
     
     lazy var stackViewForContent = StackView(axis: .vertical)
-    lazy var stackViewForLinks = StackView(axis: .horizontal)
+    lazy var stackViewForLinks   = StackView(axis: .horizontal)
     
     override func viewDidLoad() {
         super.viewDidLoad()

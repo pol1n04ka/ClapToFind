@@ -66,13 +66,11 @@ public class AudioInputManager {
     
         switch modeToSet {
         case true:
-            mode = .playAndRecord
+            mode    = .playAndRecord
             options = [.mixWithOthers]
-//            print("Setting category to record")
         case false:
-            mode = .playAndRecord
+            mode    = .playAndRecord
             options = [.defaultToSpeaker]
-//            print("Setting category to playback")
         }
         
         do {
@@ -84,22 +82,24 @@ public class AudioInputManager {
     }
     
     public func startTappingMicrophone() {
-        let inputNode = audioEngine.inputNode
+        let inputNode   = audioEngine.inputNode
         let inputFormat = inputNode.outputFormat(forBus: 0)
         
         guard let recordingFormat = AVAudioFormat(
             commonFormat: .pcmFormatInt16,
-            sampleRate: Double(sampleRate),
-            channels: 1,
-            interleaved: true
+            sampleRate:   Double(sampleRate),
+            channels:     1,
+            interleaved:  true
         ), let formatConverter = AVAudioConverter(
             from: inputFormat,
-            to: recordingFormat
+            to:   recordingFormat
         ) else { return }
         
-        inputNode.installTap(onBus: 0,
-                             bufferSize: AVAudioFrameCount(bufferSize),
-                             format: inputFormat) { buffer, _ in
+        inputNode.installTap(
+            onBus: 0,
+            bufferSize: AVAudioFrameCount(bufferSize),
+            format: inputFormat) { buffer, _ in
+                
             self.conversionQueue.async {
                 guard let pcmBuffer = AVAudioPCMBuffer(
                     pcmFormat: recordingFormat,
@@ -120,7 +120,7 @@ public class AudioInputManager {
                 }
                 
                 if let channelData = pcmBuffer.int16ChannelData {
-                    let channelDataValue = channelData.pointee
+                    let channelDataValue      = channelData.pointee
                     let channelDataValueArray = stride(
                         from: 0,
                         through: Int(pcmBuffer.frameLength),

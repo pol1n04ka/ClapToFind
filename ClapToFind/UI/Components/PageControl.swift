@@ -17,16 +17,16 @@ public protocol PageControlDelegate {
 public class PageControl: UIControl {
     
     //MARK: Properties
-    public var leftBtn: UIButton = UIButton()
-    public var rightBtn: UIButton = UIButton()
-    public var delegate: PageControlDelegate?
-    private var mainLayer: CAReplicatorLayer = CAReplicatorLayer()
-    private var maskLayer: CAReplicatorLayer = CAReplicatorLayer()
-    private var element: CALayer = CALayer()
+    public var leftBtn:      UIButton = UIButton()
+    public var rightBtn:     UIButton = UIButton()
+    public var delegate:     PageControlDelegate?
+    private var mainLayer:   CAReplicatorLayer = CAReplicatorLayer()
+    private var maskLayer:   CAReplicatorLayer = CAReplicatorLayer()
+    private var element:     CALayer = CALayer()
     private var maskElement: CALayer = CALayer()
-    private var indicator: CALayer = CALayer()
-    private var backLayer: CALayer = CALayer()
-    private var isAnimated: Bool = true
+    private var indicator:   CALayer = CALayer()
+    private var backLayer:   CALayer = CALayer()
+    private var isAnimated:  Bool = true
     
     
     public var pages: Int = 5 {
@@ -153,14 +153,15 @@ public class PageControl: UIControl {
         self.addSubview(rightBtn)
         
         // Set initial values for properties
-        self.pages = 5
-        self.currentPage = 0
-        self.elementHeight = 5
-        self.spacing = 8
-        self.inactiveColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
-        self.activeColor = UIColor.white
-        self.cornerRadius = 2.5
+        self.pages                  = 5
+        self.currentPage            = 0
+        self.elementHeight          = 5
+        self.spacing                = 8
+        self.inactiveColor          = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
+        self.activeColor            = UIColor.white
+        self.cornerRadius           = 2.5
         self.fillWidthAutomatically = true
+        
         self.translatesAutoresizingMaskIntoConstraints = false 
     }
     
@@ -253,7 +254,7 @@ public class PageControl: UIControl {
     }
     
     public func set(progress: Int, animated: Bool) {
-        self.isAnimated = animated
+        self.isAnimated  = animated
         self.currentPage = progress
     }
     

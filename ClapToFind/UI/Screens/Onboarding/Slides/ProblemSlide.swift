@@ -12,9 +12,9 @@ class ProblemSlide: UICollectionViewCell {
     
     public static let identifier = "ProblemSlide"
     
-    lazy var image = ImageView(image: .problem)
+    lazy var image   = ImageView(image: .problem)
     lazy var heading = Label(style: .heading, "Can’t find your phone?")
-    lazy var body = Label(style: .body, "Our app will help you!")
+    lazy var body    = Label(style: .body, "Our app will help you!")
     
     lazy var stackView = StackView(axis: .vertical)
     
@@ -44,9 +44,9 @@ extension ProblemSlide {
         stackView.setCustomSpacing(-5, after: image)
         stackView.setCustomSpacing(10, after: heading)
         
-        image.translatesAutoresizingMaskIntoConstraints = false
+        image.translatesAutoresizingMaskIntoConstraints   = false
         heading.translatesAutoresizingMaskIntoConstraints = false
-        body.translatesAutoresizingMaskIntoConstraints = false
+        body.translatesAutoresizingMaskIntoConstraints    = false
         
         let constraints = [
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),

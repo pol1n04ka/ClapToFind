@@ -21,31 +21,31 @@ public protocol SoundRecognitionDelegate: AnyObject {
 public class SoundRecognition {
     
     // MARK: Constants
-    private let modelFileName: String
-    private let modelFileExtension: String
-    private let labelFileName: String
-    private let labelFileExtension: String
+    private let modelFileName:               String
+    private let modelFileExtension:          String
+    private let labelFileName:               String
+    private let labelFileExtension:          String
     private let audioBufferInputTensorIndex: Int = 0
     
     // MARK: Variables
-    public weak var delegate: SoundRecognitionDelegate?
-    private(set) var sampleRate = 0
+    public weak var delegate:    SoundRecognitionDelegate?
+    private(set) var sampleRate  = 0
     private(set) var labelNames: [String] = []
-    private var interpreter: Interpreter!
+    private var interpreter:     Interpreter!
     
     // MARK: Public methods
     public init(
-        modelFileName: String,
+        modelFileName:      String,
         modelFileExtension: String = "tflite",
-        labelFileName: String = "labels",
+        labelFileName:      String = "labels",
         labelFileExtension: String = "txt",
-        delegate: SoundRecognitionDelegate? = nil
+        delegate:           SoundRecognitionDelegate? = nil
     ) {
-        self.modelFileName = modelFileName
+        self.modelFileName      = modelFileName
         self.modelFileExtension = modelFileExtension
-        self.labelFileName = labelFileName
+        self.labelFileName      = labelFileName
         self.labelFileExtension = labelFileExtension
-        self.delegate = delegate
+        self.delegate           = delegate
         
         setupInterpreter()
     }
@@ -80,7 +80,7 @@ public class SoundRecognition {
             
             try interpreter.allocateTensors()
             let inputShape = try interpreter.input(at: 0).shape
-            sampleRate = inputShape.dimensions[1]
+            sampleRate     = inputShape.dimensions[1]
             
             try interpreter.invoke()
             

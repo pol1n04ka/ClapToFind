@@ -47,9 +47,10 @@ class SettingsView: UIViewController {
 extension SettingsView {
     
     func setupView() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.delegate        = self
+        tableView.dataSource      = self
         tableView.backgroundColor = .clear
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         view.addSubview(tableView)
@@ -82,11 +83,11 @@ extension SettingsView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = tableViewItems[indexPath.row]
+        cell.textLabel?.text      = tableViewItems[indexPath.row]
         cell.textLabel?.textColor = .white
-        cell.backgroundColor = .white.withAlphaComponent(0.2)
+        cell.backgroundColor      = .white.withAlphaComponent(0.2)
         
-        let bgView = UIView()
+        let bgView             = UIView()
         bgView.backgroundColor = .white.withAlphaComponent(0.3)
         
         cell.selectedBackgroundView = bgView
